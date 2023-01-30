@@ -1,0 +1,15 @@
+// colors
+:root {
+  // base
+  --font-family: "Sofia Pro", sans-serif;
+  --content-width: 1440px;
+  --container-offset: 40px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --light-color: #fff;
+  --dark-color: #131418;
+  --body-color: #3A3A3A;
+  --grey-color:  #808080;
+  --line-color: #E9E9E9;
+}

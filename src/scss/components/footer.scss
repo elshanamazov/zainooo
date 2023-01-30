@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  width: 75vh;
+  transform: rotate(-90deg) translateX(100%);
+  transform-origin: right bottom;
+  position: absolute;
+  bottom: 5vh;
+  right: 2.8vw;
+  z-index: 3;
+
+  &__menu {
+    display: flex;
+
+    &--item {
+      padding: 0 16px;
+    }
+
+    &--link {
+      font-weight: 600;
+    }
+  }
+}

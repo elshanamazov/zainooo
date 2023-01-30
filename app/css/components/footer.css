@@ -1,0 +1,28 @@
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75vh;
+  -webkit-transform: rotate(-90deg) translateX(100%);
+  -ms-transform: rotate(-90deg) translateX(100%);
+  transform: rotate(-90deg) translateX(100%);
+  -webkit-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  transform-origin: right bottom;
+  position: absolute;
+  bottom: 5vh;
+  right: 2.8vw;
+  z-index: 3;
+}
+.footer__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer__menu--item {
+  padding: 0 16px;
+}
+.footer__menu--link {
+  font-weight: 600;
+}
+/*# sourceMappingURL=footer.css.map */
