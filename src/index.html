@@ -4,14 +4,14 @@
 @include('partials/head.html')
 
 <body class="page__body">
-  <main class="main">
-    <div class="main__wrapper">
-      @include('partials/sidebar.html')
+  <div class="content">
+    @include('partials/header.html')
+    <main class="main">
       @include('partials/slider.html')
-      @include('partials/footer.html')
-    </div>
-  </main>
-  <!-- @include('partials/modal.html') -->
+    </main>
+    @include('partials/footer.html')
+  </div>
+  @include('partials/modal.html')
 </body>
 
 </html>

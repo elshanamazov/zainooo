@@ -1,11 +1,7 @@
-html {
-  box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .page {
@@ -25,10 +21,15 @@ html {
   }
 }
 
-.main__wrapper {
+.content {
   display: flex;
   min-height: 100vh;
   position: relative;
+}
+
+.main {
+  display: flex;
+  width: calc(100% - max(275px, 19%));
 }
 
 img {
@@ -90,12 +91,6 @@ a {
   width: 1px;
   height: 1px;
   clip: rect(0 0 0 0);
-}
-
-.container {
-  margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

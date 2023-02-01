@@ -1,5 +1,6 @@
 .footer {
   display: flex;
+  justify-content: space-between;
   width: 75vh;
   transform: rotate(-90deg) translateX(100%);
   transform-origin: right bottom;
@@ -10,13 +11,26 @@
 
   &__menu {
     display: flex;
+  }
 
-    &--item {
-      padding: 0 16px;
+  &__item {
+    padding: 0 16px;
+  }
+
+  &__link {
+    font-weight: 600;
+    transition: color .2s ease-in;
+
+    &:hover {
+      color: var(--accent-color);
     }
 
-    &--link {
-      font-weight: 600;
+    &:active {
+      opacity: .8;
+    }
+
+    &:focus {
+      color: var(--accent-color);
     }
   }
 }

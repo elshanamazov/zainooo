@@ -1,5 +1,4 @@
 .sidebar {
-  max-width: 1440px;
   display: flex;
   justify-content: center;
   width: max(275px, 19%);
@@ -10,8 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 200px;
-    padding: 0 30px;
+    max-width: 220px;
   }
 
   &__adv {
@@ -58,8 +56,21 @@
       font-style: normal;
       font-weight: 400;
       font-size: 15px;
-      line-height: 23px;
+      line-height: 1.1;
       color: var(--dark-color);
+      transition: color .2s ease-in;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+
+      &:active {
+        opacity: .8;
+      }
+
+      &:focus {
+        color: var(--accent-color);
+      }
     }
   }
 }

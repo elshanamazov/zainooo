@@ -1,45 +1,23 @@
 .nav {
-  flex: 1 1 0%;
-
   &__list {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: space-evenly;
   }
 
   &__item {
-    display: flex;
+    padding: 30px 0;
   }
 
   &__link {
     display: flex;
     align-items: center;
     font-size: 22px;
-    line-height: 33px;
+    line-height: 1.2;
     color: var(--body-color);
-    position: relative;
-    transition: 0.5s color;
-
-    &:after {
-      position: absolute;
-      content: '';
-      left: 0;
-      bottom: -3px;
-      background: var(--dark-color);
-      height: 1px;
-      width: 100%;
-      transform: scale(0);
-      transition: 0.5s transform;
-    }
-
+    transition: color .2s ease-in;
 
     &:hover {
-      color: var(--dark-color);
-
-      &:after {
-        transform: scale(1);
-      }
+      color: var(--accent-color);
     }
 
     &:active {
@@ -47,27 +25,7 @@
     }
 
     &:focus {
-      &::after {
-        transform: scale(1);
-      }
-    }
-
-    & ._tag {
-      font-family: var(--font-family);
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 18px;
-      color: var(--light-color);
-      text-align: center;
-
-      padding: 3px 8px;
-      width: 41px;
-      height: 24px;
-      border-radius: 40px;
-      background: rgba(0, 0, 0, 0.2);
-      color: #ffff;
-      margin-left: 12px;
+      color: var(--accent-color);
     }
   }
 }

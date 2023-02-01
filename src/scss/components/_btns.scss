@@ -3,17 +3,17 @@
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  line-height: 18px;
+  line-height: 1;
   background: var(--light-color);
   border: 1px solid var(--grey-color);
   border-radius: 8px;
   min-width: 185px;
   padding: 27px 30px;
-	transition: font-size .2s ease-in;
+  transition: font-size .2s ease-in;
 
   &:hover {
-		font-size: 1rem;
-	}
+    font-size: 1rem;
+  }
 
   &:active {
     opacity: .8;
@@ -33,11 +33,11 @@
     height: 20px;
     margin-right: 12px;
 
-    &._bag-icon {
+    &--bag {
       fill: var(--light-color);
     }
 
-    &._play-icon {
+    &--play {
       fill: none;
       stroke: var(--dark-color);
     }
