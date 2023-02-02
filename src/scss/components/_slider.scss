@@ -25,6 +25,7 @@
     display: flex;
     align-items: center;
     padding-left: max(40px, 3.5%);
+    padding-bottom: 20vh;
     position: relative;
   }
 
@@ -70,8 +71,10 @@
 
   &__pic {
     position: absolute;
-    bottom: 0;
-    right: 60px;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    width: 86%;
     z-index: -1;
 
     &--img {

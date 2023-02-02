@@ -13,30 +13,8 @@
   }
 
   &__adv {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 6px;
-    row-gap: 0;
-    align-items: center;
-
-    &--text {
-      font-family: var(--font-family);
-      display: flex;
-      height: 50px;
-      font-weight: 100;
-      font-size: 44px;
-      line-height: 1;
-    }
-
-    &--bg {
-      background: var(--dark-color);
-      width: 110px;
-      color: var(--light-color);
-
-      & .sidebar__adv--text {
-        font-weight: 400;
-      }
-    }
+    margin-top: 15vh;
+    margin-bottom: 10vh;
   }
 
   &__link {
