@@ -566,6 +566,20 @@ a {
   padding-bottom: 18vh;
   position: relative;
 }
+.slider__slide::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: url("../img/svg/digit.svg") no-repeat;
+  width: 50%;
+  height: 50%;
+  right: 10%;
+  top: 25%;
+  -webkit-transform: translate(-10%, -8%);
+  -ms-transform: translate(-10%, -8%);
+  transform: translate(-10%, -8%);
+  z-index: -2;
+}
 .slider__item {
   max-width: 525px;
 }

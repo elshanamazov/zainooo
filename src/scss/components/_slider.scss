@@ -27,6 +27,19 @@
     padding-left: max(40px, 3.5%);
     padding-bottom: 18vh;
     position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      background: url("../img/svg/digit.svg") no-repeat;
+      width: 50%;
+      height: 50%;
+      right: 10%;
+      top: 25%;
+      transform: translate(-10%, -8%);
+      z-index: -2;
+    }
   }
 
   &__item {
