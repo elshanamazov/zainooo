@@ -5,7 +5,7 @@
   --content-width: 1440px;
   --container-offset: 40px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-
+  --mobile-header-height: 80px;
   // colors
   --light-color: #fff;
   --dark-color: #131418;
@@ -14,3 +14,9 @@
   --line-color: #E9E9E9;
   --accent-color: #ECCA7B;
 }
+
+$desktop: "(min-width: 999px)";
+$tablet: "(min-width: 600px) and (max-width: 998px )";
+$mobile: "(max-width: 599px)";
+$up-to-desktop: "(max-width: 998px)";
+

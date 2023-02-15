@@ -1,11 +1,6 @@
 .user-panel {
   display: flex;
   align-items: center;
-  height: 14vh;
-  position: absolute;
-  top: 0;
-  right: 2.8vw;
-  z-index: 3;
 
   &__icon {
     width: 24px;
@@ -75,5 +70,22 @@
     &._active {
       display: block;
     }
+  }
+}
+
+@media #{$desktop} {
+  .user-panel {
+    position: absolute;
+    top: 0;
+    right: 2.8vw;
+    z-index: 3;
+    height: 14vh;
+  }
+}
+
+
+@media #{$mobile} {
+  .user-panel__item {
+    margin-left: 20px;
   }
 }

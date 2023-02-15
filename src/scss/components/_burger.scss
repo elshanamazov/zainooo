@@ -1,0 +1,61 @@
+.burger {
+  text-indent: -1000px;
+  overflow: hidden;
+  background: transparent;
+  z-index: 3;
+
+  display: flex;
+  position: relative;
+  height: 20px;
+  width: 30px;
+
+  &.active {
+    &:before {
+      background: #000;
+      transform: rotate(45deg);
+      transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+      top: 8px;
+    }
+
+    &:after {
+      background: #000;
+      transform: rotate(-45deg);
+      bottom: 10px;
+      transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+    }
+
+    & span {
+      transform: scale(0);
+    }
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &__line {
+    position: absolute;
+    top: 9px;
+    right: 0;
+    width: 100%;
+    background: #000;
+    height: 2px;
+    transform: scale(1);
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  }
+
+}

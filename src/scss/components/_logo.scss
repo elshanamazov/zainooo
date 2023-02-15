@@ -9,3 +9,11 @@
     height: 32px;
   }
 }
+
+
+@media #{$mobile} {
+  .logo__img {
+    width: 110px;
+    height: 30px;
+  }
+}

@@ -33,9 +33,10 @@
       position: absolute;
       display: block;
       background: url("../img/svg/digit.svg") no-repeat;
+      background-size: contain;
       width: 50%;
-      height: 50%;
-      right: 10%;
+      height: 100%;
+      right: 5%;
       top: 25%;
       transform: translate(-10%, -8%);
       z-index: -2;
@@ -79,6 +80,7 @@
 
   &__cta {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
   }
 
@@ -100,5 +102,61 @@
     font-size: 13px;
     line-height: 1;
     font-weight: 600;
+  }
+}
+
+@media #{$up-to-desktop} {
+  .slider__slide {
+    min-height: calc(100vh - var(--mobile-header-height));
+    padding: 20px 20px 50px;
+  }
+
+  .slider__item {
+    max-width: 420px;
+  }
+}
+
+@media #{$tablet} {
+  .slider__pic {
+    left: 65%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+  }
+}
+
+@media #{$mobile} {
+  .slider__title {
+    font-size: 36px;
+  }
+
+  .slider__subtitle,
+  .slider__desc {
+    font-size: 16px;
+  }
+
+  .slider__item {
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider__pic {
+    position: static;
+    transform: translate(0);
+    width: 100%;
+  }
+
+  .slider__cta {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .slider__slide {
+    flex-direction: column;
+
+    &::after {
+      display: none;
+    }
   }
 }

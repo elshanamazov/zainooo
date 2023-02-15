@@ -34,3 +34,27 @@
     }
   }
 }
+
+@media #{$up-to-desktop} {
+  .footer {
+    position: static;
+    width: 100%;
+    transform: rotate(0) translateX(0);
+    flex-direction: row-reverse;
+    padding: 20px 4px;
+    background: #ffffff;
+    border-top: 1px solid var(--line-color);
+  }
+}
+
+
+@media #{$mobile} {
+
+  .footer {
+    flex-wrap: wrap;
+
+    &__item {
+      padding: 10px;
+    }
+  }
+}

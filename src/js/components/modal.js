@@ -17,7 +17,6 @@ function bindModal(trigger, modal, close) {
   close.addEventListener('click', () => {
     modal.style.display = 'none'
     body.classList.remove('locked')
-    modalVideoNode.insertAdjacentElement('afterbegin', '<div></div>')
   });
   modal.addEventListener('click', e => {
     if (e.target === modal) {
@@ -27,4 +26,4 @@ function bindModal(trigger, modal, close) {
   })
 }
 
-bindModal('.modal__btn', '.modal__wrapper', '.modal__close')
+bindModal('.modal__btn', '.modal__wrapper', '.modal__close');

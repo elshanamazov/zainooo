@@ -21,3 +21,9 @@
     transform: translateY(10px);
   }
 }
+
+@media #{$up-to-desktop} {
+  .scroll {
+    display: none;
+  }
+}

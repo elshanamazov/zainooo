@@ -12,6 +12,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/slider */ "./src/js/components/slider.js");
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/modal */ "./src/js/components/modal.js");
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_modal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/burger */ "./src/js/components/burger.js");
+/* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_burger__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -149,6 +152,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/burger.js":
+/*!*************************************!*\
+  !*** ./src/js/components/burger.js ***!
+  \*************************************/
+/***/ (() => {
+
+function burgerMenu() {
+  const burger = document.querySelector('.js-burger');
+  const menu = document.querySelector('.js-menu');
+  const body = document.querySelector('body');
+  burger.addEventListener('click', () => {
+    if (!menu.classList.contains('active')) {
+      menu.classList.add('active');
+      burger.classList.add('active');
+      body.classList.add('locked');
+    } else {
+      menu.classList.remove('active');
+      burger.classList.remove('active');
+      body.classList.remove('locked');
+    }
+  });
+  // Вот тут мы ставим брейкпоинт навбара
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 991.98) {
+      menu.classList.remove('active');
+      burger.classList.remove('active');
+      body.classList.remove('locked');
+    }
+  });
+}
+burgerMenu();
+
+/***/ }),
+
 /***/ "./src/js/components/modal.js":
 /*!************************************!*\
   !*** ./src/js/components/modal.js ***!
@@ -172,7 +209,6 @@ function bindModal(trigger, modal, close) {
   close.addEventListener('click', () => {
     modal.style.display = 'none';
     body.classList.remove('locked');
-    modalVideoNode.insertAdjacentElement('afterbegin', '<div></div>');
   });
   modal.addEventListener('click', e => {
     if (e.target === modal) {
@@ -203,7 +239,10 @@ const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider', {
   },
   slidesPerView: 'auto',
   mousewheel: true,
-  speed: 600
+  speed: 600,
+  navigation: {
+    nextEl: '.js-scroll'
+  }
 });
 
 /***/ }),

@@ -1,54 +1,88 @@
 .sidebar {
   display: flex;
-  justify-content: center;
-  width: max(275px, 19%);
-  padding-bottom: 5vh;
-  border-right: 1px solid var(--line-color);
+}
 
-  &__body {
+@media #{$desktop} {
+  .sidebar {
+    justify-content: center;
+    width: max(275px, 19%);
+    padding-bottom: 5vh;
+    border-right: 1px solid var(--line-color);
+
+    &__mobile-logo,
+    &__burger {
+      display: none;
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 220px;
+    }
+
+    &__adv {
+      margin-top: 10vh;
+      margin-bottom: 5vh;
+    }
+  }
+}
+
+@media #{$up-to-desktop} {
+  .sidebar {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--mobile-header-height);
+    background: #ffffff;
+    border-bottom: 1px solid var(--line-color);
+    z-index: 10;
+
+    &__user-panel {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    &__mobile-logo {
+      position: relative;
+      top: -5px;
+    }
+  }
+
+  .sidebar__body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 220px;
-  }
+    position: fixed;
+    width: 320px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #eee;
+    padding-top: var(--mobile-header-height);
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    transform: translateX(-100%);
+    transition: transform .3s;
 
-  &__adv {
-    margin-top: 10vh;
-    margin-bottom: 5vh;
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
-
-    &--line {
-      width: 48px;
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
       height: 1px;
-      background: var(--dark-color);
     }
 
-    &--more {
-      font-family: var(--font-family);
-      font-style: normal;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 1.1;
-      color: var(--dark-color);
-      transition: color .2s ease-in;
-
-      &:hover {
-        color: var(--accent-color);
-      }
-
-      &:active {
-        opacity: .8;
-      }
-
-      &:focus {
-        color: var(--accent-color);
-      }
+    &.active{
+      transform: translateX(0);
     }
   }
 }

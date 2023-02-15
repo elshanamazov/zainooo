@@ -1,6 +1,9 @@
 <header class="sidebar">
-  <div class="sidebar__body">
-    <a class="logo">
+  <a class="sidebar__mobile-logo logo">
+    <img loading="lazy" src="img/svg/logo.svg" class="logo__img" width="116" height="28" alt="logo">
+  </a>
+  <div class="sidebar__body js-menu">
+    <a class="sidebar__logo logo">
       <img loading="lazy" src="img/svg/logo.svg" class="logo__img" width="116" height="28" alt="logo">
     </a>
     <nav class="nav">
@@ -39,11 +42,11 @@
       </div>
     </div>
 
-    <div class="scroll">
+    <div class="scroll js-scroll">
       <a href="#" class="scroll__link">Scroll down</a>
     </div>
   </div>
-  <div class="user-panel">
+  <div class="sidebar__user-panel user-panel">
     <form action="#" class="search">
       <button type="button" class="search__btn btn-reset js-btn">
         <svg class="search__icon">
@@ -62,4 +65,5 @@
       </svg>
     </a>
   </div>
+  <button class="sidebar__burger burger btn-reset js-burger">Menu<span class="burger__line"></span></button>
 </header>

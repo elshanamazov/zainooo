@@ -8,4 +8,7 @@ const swiper = new Swiper('.slider', {
   slidesPerView: 'auto',
   mousewheel: true,
   speed: 600,
+  navigation: {
+    nextEl: '.js-scroll',
+  }
 });
