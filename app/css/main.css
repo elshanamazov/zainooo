@@ -342,63 +342,50 @@ a {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  height: 20px;
+  height: 30px;
   width: 30px;
 }
-.burger.active:before {
-  background: #000;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  top: 8px;
-}
-.burger.active:after {
-  background: #000;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  bottom: 10px;
-  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-}
-.burger.active span {
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-.burger:before, .burger:after {
-  content: "";
+.burger:before, .burger:after, .burger__line {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   height: 2px;
   width: 100%;
-  background: #000;
+  background: var(--dark-color);
   -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
   -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
   transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
 }
-.burger:before {
-  top: 0;
+.burger::before, .burger::after {
+  content: "";
+}
+.burger::before {
+  -webkit-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
 }
 .burger::after {
-  bottom: 0;
+  -webkit-transform: translate(-50%, 400%);
+  -ms-transform: translate(-50%, 400%);
+  transform: translate(-50%, 400%);
 }
-.burger__line {
-  position: absolute;
-  top: 9px;
-  right: 0;
-  width: 100%;
-  background: #000;
-  height: 2px;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+.burger.active::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.burger.active::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.burger.active .burger__line {
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  -ms-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
 }
 
 .sidebar {
@@ -478,7 +465,7 @@ a {
     -ms-flex-pack: justify;
     justify-content: space-between;
     position: fixed;
-    width: 320px;
+    width: 280px;
     left: 0;
     top: 0;
     bottom: 0;
@@ -506,6 +493,11 @@ a {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+@media (max-width: 375px) {
+  .sidebar__body {
+    width: 100%;
   }
 }
 .nav__list {
@@ -790,7 +782,11 @@ a {
     max-width: 420px;
   }
 }
-@media (min-width: 600px) and (max-width: 998px ) {
+@media (max-width: 998px) {
+  .slider::before,
+  .slider::after {
+    display: none;
+  }
   .slider__pic {
     left: 65%;
     top: 65%;
@@ -816,6 +812,16 @@ a {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
   }
   .slider__pic {
     position: static;
@@ -823,6 +829,12 @@ a {
     -ms-transform: translate(0);
     transform: translate(0);
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
   }
   .slider__cta {
     -webkit-box-pack: center;

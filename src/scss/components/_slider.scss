@@ -116,7 +116,13 @@
   }
 }
 
-@media #{$tablet} {
+@media #{$up-to-desktop} {
+
+  .slider::before,
+  .slider::after {
+    display: none;
+  }
+
   .slider__pic {
     left: 65%;
     top: 65%;
@@ -139,12 +145,17 @@
     max-width: 100%;
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    order: 2;
   }
 
   .slider__pic {
     position: static;
     transform: translate(0);
     width: 100%;
+    display: flex;
+    order: 1;
   }
 
   .slider__cta {
@@ -154,7 +165,6 @@
 
   .slider__slide {
     flex-direction: column;
-
     &::after {
       display: none;
     }

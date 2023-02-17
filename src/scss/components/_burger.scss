@@ -6,56 +6,47 @@
 
   display: flex;
   position: relative;
-  height: 20px;
+  height: 30px;
   width: 30px;
 
-  &.active {
-    &:before {
-      background: #000;
-      transform: rotate(45deg);
-      transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-      top: 8px;
-    }
-
-    &:after {
-      background: #000;
-      transform: rotate(-45deg);
-      bottom: 10px;
-      transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-    }
-
-    & span {
-      transform: scale(0);
-    }
-  }
-
   &:before,
-  &:after {
-    content: '';
+  &:after,
+  &__line {
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     height: 2px;
     width: 100%;
-    background: #000;
+    background: var(--dark-color);
     transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
   }
 
-  &:before {
-    top: 0;
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  &::before {
+    transform: translate(-50%, -500%);
   }
 
   &::after {
-    bottom: 0;
+    transform: translate(-50%, 400%);
   }
 
-  &__line {
-    position: absolute;
-    top: 9px;
-    right: 0;
-    width: 100%;
-    background: #000;
-    height: 2px;
-    transform: scale(1);
-    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  &.active {
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .burger__line {
+      transform: translate(-50%, -50%) scale(0);
+    }
   }
 
 }

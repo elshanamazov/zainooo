@@ -62,7 +62,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: fixed;
-    width: 320px;
+    width: 280px;
     left: 0;
     top: 0;
     bottom: 0;
@@ -84,5 +84,11 @@
     &.active{
       transform: translateX(0);
     }
+  }
+}
+
+@media #{$small-mobile} {
+  .sidebar__body {
+    width: 100%;
   }
 }
